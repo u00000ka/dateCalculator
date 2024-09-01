@@ -11,7 +11,7 @@
     </bean>
 
     <!-- Controller -->
-    <bean class="com.u00000ka.dataCalculator.Controller.MainController" />
+    <bean class="com.u00000ka.tools.Controller.MainController" />
 
     <!-- Other beans and configurations -->
 </beans>

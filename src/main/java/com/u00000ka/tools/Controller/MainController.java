@@ -1,4 +1,4 @@
-package com.u00000ka.dataCalculator.Controller;
+package com.u00000ka.tools.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
