@@ -22,6 +22,18 @@
             <artifactId>spring-webmvc</artifactId>
             <version>6.1.11</version>
         </dependency>
+
+        <!-- JSPタグ用 -->
+        <dependency>
+            <groupId>jakarta.servlet.jsp.jstl</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>3.0.1</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -30,7 +42,6 @@
                 <directory>src/main/resources</directory>
                 <includes>
                     <include>**/*.properties</include>
-                    <!-- 必要に応じて他のリソースを追加 -->
                 </includes>
             </resource>
         </resources>
@@ -39,7 +50,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.2</version> <!-- バージョンは実際のプロジェクトに合わせて調整 -->
+                <version>3.3.2</version>
                 <configuration>
                     <warSourceDirectory>src/main/webapp</warSourceDirectory>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
