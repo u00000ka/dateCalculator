@@ -2,7 +2,7 @@ package com.u00000ka.tools.ViewModel;
 
 import java.time.LocalDate;
 
-public class DateInformationViewModel {
+public class DateCalculatorResultViewModel {
 
     /**
      * 生年月日
@@ -24,7 +24,7 @@ public class DateInformationViewModel {
      */
     private String zodiac;
 
-    public DateInformationViewModel(LocalDate birthDate, long daysFromBirth, String constellation, String zodiac) {
+    public DateCalculatorResultViewModel(LocalDate birthDate, long daysFromBirth, String constellation, String zodiac) {
         this.birthDate = birthDate;
         this.daysFromBirth = daysFromBirth;
         this.constellation = constellation;

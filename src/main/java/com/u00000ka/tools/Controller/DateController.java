@@ -1,8 +1,7 @@
 package com.u00000ka.tools.Controller;
 
 import com.u00000ka.tools.Service.DateService;
-import com.u00000ka.tools.ViewModel.DateInformationViewModel;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.u00000ka.tools.ViewModel.DateCalculatorResultViewModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -48,7 +47,7 @@ public class DateController {
         String chineseZodiac = dateService.getZodiac(birthDate);
 
         // JSPで使う用
-        DateInformationViewModel viewModel = new DateInformationViewModel(birthDate, daysBetween, zodiacSign, chineseZodiac);
+        DateCalculatorResultViewModel viewModel = new DateCalculatorResultViewModel(birthDate, daysBetween, zodiacSign, chineseZodiac);
         ModelAndView modelAndView = new ModelAndView("date/index");
         modelAndView.addObject("viewModel", viewModel);
         return modelAndView;
