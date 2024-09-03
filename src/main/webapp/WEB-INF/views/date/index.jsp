@@ -1,12 +1,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
 <head>
     <title>誕生日情報</title>
 </head>
 <body>
 <h1>誕生日情報計算フォーム</h1>
-<form action="/tools/date" method="get">
+<form action="/tools/date" method="get" >
+    <c:if test="${bindingResult.hasErrors()}">
+        <div style="color: red;">
+            <c:forEach var="error" items="${bindingResult.allErrors}">
+                <p>${error.defaultMessage}</p>
+            </c:forEach>
+        </div>
+    </c:if>
     <label for="year">年:</label>
     <input type="number" id="year" name="year" value="${param.year}" required />
     <br/>

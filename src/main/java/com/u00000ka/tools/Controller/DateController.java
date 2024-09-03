@@ -1,8 +1,11 @@
 package com.u00000ka.tools.Controller;
 
+import com.u00000ka.tools.Form.DateCalculatorForm;
 import com.u00000ka.tools.Service.DateService;
 import com.u00000ka.tools.ViewModel.DateCalculatorResultViewModel;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,18 +31,23 @@ public class DateController {
 
     /**
      * 計算結果表示
-     * @param year 年
-     * @param month 月
-     * @param day 日
+     * @param form 入力値
+     * @param bindingResult バリデーションの結果
      * @return date/index.jsp
      */
-    @GetMapping(value = "/date", params = {"year", "month", "day"})
+    @GetMapping(value = "/date")
     public ModelAndView calculateDateInfo(
-            @RequestParam("year") int year,
-            @RequestParam("month") int month,
-            @RequestParam("day") int day) {
+            @Validated DateCalculatorForm form,
+            BindingResult bindingResult
+    ) {
 
-        LocalDate birthDate = LocalDate.of(year, month, day);
+        if (bindingResult.hasErrors()) {
+            ModelAndView modelAndView = new ModelAndView("date/index");
+            modelAndView.addObject("bindingResult", bindingResult);
+            return modelAndView;
+        }
+
+        LocalDate birthDate = LocalDate.of(form.getYear(), form.getMonth(), form.getDay());
 
         // Serviceからデータを取得
         long daysBetween = dateService.calculateDaysFromDate(birthDate);
