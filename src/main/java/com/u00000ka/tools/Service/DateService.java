@@ -19,14 +19,13 @@ public class DateService {
     };
 
     /**
-     * 年月日から今日までの日数を計算
-     *
-     * @param date 年月日
-     * @return 指定の年月日から今日までの日数
+     * 指定日から指定日までの日数を計算（startの日はカウントしない）
+     * @param start 年月日
+     * @param end 年月日
+     * @return 指定日から指定日までの日数
      */
-    public long calculateDaysFromDate(LocalDate date) {
-        LocalDate today = LocalDate.now();
-        return ChronoUnit.DAYS.between(date, today);
+    public long calculateDaysFromDate(LocalDate start, LocalDate end) {
+        return ChronoUnit.DAYS.between(start, end);
     }
 
     /**
@@ -99,7 +98,7 @@ public class DateService {
     public String getZodiac(LocalDate date) {
         int year = date.getYear();
         // 干支の基準年（子年）
-        int baseYear = 1924;
+        int baseYear = 1900;
         int cycleYear = year - baseYear;
         int zodiacIndex = cycleYear % 12;
         return ZODIACS[zodiacIndex];

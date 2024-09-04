@@ -60,7 +60,7 @@ public class DateController {
         }
 
         // Serviceからデータを取得
-        long daysBetween = dateService.calculateDaysFromDate(birthDate);
+        long daysBetween = dateService.calculateDaysFromDate(birthDate, LocalDate.now());
         String zodiacSign = dateService.getConstellation(birthDate);
         String chineseZodiac = dateService.getZodiac(birthDate);
 
