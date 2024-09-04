@@ -34,7 +34,7 @@
                     <label class="form-label mb-0 ms-2" for="day">日</label>
                 </div>
 
-                <div class="col-sm-2 d-flex align-items-center">
+                <div class="col-sm-2 d-flex">
                     <input class="btn btn-sm btn-primary" type="submit" value="送信" />
                     <input class="btn btn-sm btn-secondary ms-1" type="button" onclick="clearForm()" value="クリア" />
                 </div>
@@ -54,6 +54,7 @@
                 <table class="table mt-5">
                     <thead>
                     <tr>
+                        <th scope="col">誕生日</th>
                         <th scope="col">生まれてからの日数</th>
                         <th scope="col">星座</th>
                         <th scope="col">干支</th>
@@ -61,6 +62,7 @@
                     </thead>
                     <tbody>
                     <tr>
+                        <td>${viewModel.birthDate.year}年${viewModel.birthDate.monthValue}年${viewModel.birthDate.dayOfMonth}年</td>
                         <td>${viewModel.daysFromBirth}日</td>
                         <td>${viewModel.constellation}</td>
                         <td>${viewModel.zodiac}</td>
