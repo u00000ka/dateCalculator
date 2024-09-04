@@ -5,10 +5,12 @@ import com.u00000ka.tools.Service.DateService;
 import com.u00000ka.tools.ViewModel.DateCalculatorResultViewModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.time.DateTimeException;
 import java.time.LocalDate;
 
 @Controller
@@ -47,7 +49,15 @@ public class DateController {
             return modelAndView;
         }
 
-        LocalDate birthDate = LocalDate.of(form.getYear(), form.getMonth(), form.getDay());
+        LocalDate birthDate;
+        try {
+            birthDate = LocalDate.of(form.getYear(), form.getMonth(), form.getDay());
+        } catch (DateTimeException e) {
+            ModelAndView modelAndView = new ModelAndView("date/index");
+            bindingResult.addError(new FieldError("DateCalculatorForm", "day", "無効な日付です。正しい日付を入力してください"));
+            modelAndView.addObject("bindingResult", bindingResult);
+            return modelAndView;
+        }
 
         // Serviceからデータを取得
         long daysBetween = dateService.calculateDaysFromDate(birthDate);
