@@ -6,6 +6,9 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.time.temporal.ChronoUnit;
 
+/**
+ * 日付に関するService
+ */
 @Service
 public class DateService {
 

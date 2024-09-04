@@ -6,6 +6,9 @@ import jakarta.validation.constraints.NotNull;
 
 import java.io.Serializable;
 
+/**
+ * 誕生日情報計算ツールで送信されるパラメータのForm
+ */
 public class DateCalculatorForm implements Serializable {
 
     @NotNull(message = "年は必須です")

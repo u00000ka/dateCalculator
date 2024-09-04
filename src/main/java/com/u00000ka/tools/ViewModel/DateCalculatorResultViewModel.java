@@ -2,6 +2,9 @@ package com.u00000ka.tools.ViewModel;
 
 import java.time.LocalDate;
 
+/**
+ * 誕生日情報計算ツールで計算結果を表示するViewModel
+ */
 public class DateCalculatorResultViewModel {
 
     /**

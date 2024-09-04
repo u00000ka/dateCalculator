@@ -13,6 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 
+/**
+ * 誕生日情報計算ツールのController
+ */
 @Controller
 public class DateController {
 
