@@ -64,6 +64,13 @@
                     <include>**/*.properties</include>
                 </includes>
             </resource>
+            <!-- CS/JSS用 -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>public/**</include>
+                </includes>
+            </resource>
         </resources>
 
         <plugins>

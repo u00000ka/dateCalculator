@@ -20,6 +20,11 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <!-- 静的リソース用 -->
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/resources/public/*</url-pattern>
+    </servlet-mapping>
 
     <jsp-config>
         <!-- JSPページのエンコーディングをUTF-8に設定 -->
