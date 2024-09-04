@@ -15,21 +15,21 @@
             <form class="row justify-content-center mt-5" action="/tools/date" method="get">
                 <div class="col-sm-2 d-flex align-items-center">
                     <div class="w-75">
-                        <input class="form-control form-control-sm" type="number" id="year" name="year" value="${param.year}" required />
+                        <input class="form-control form-control-sm" type="number" id="year" name="year" value="${param.year}" required min="1900" max="2100" />
                     </div>
                     <label class="form-label mb-0 ms-2" for="year">年</label>
                 </div>
 
                 <div class="col-sm-2 d-flex align-items-center">
                     <div class="w-75">
-                        <input class="form-control form-control-sm" type="number" id="month" name="month" value="${param.month}" required />
+                        <input class="form-control form-control-sm" type="number" id="month" name="month" value="${param.month}" required min="1" max="12" />
                     </div>
                     <label class="form-label mb-0 ms-2" for="month">月</label>
                 </div>
 
                 <div class="col-sm-2 d-flex align-items-center">
                     <div class="w-75">
-                        <input class="form-control form-control-sm" type="number" id="day" name="day" value="${param.day}" required />
+                        <input class="form-control form-control-sm" type="number" id="day" name="day" value="${param.day}" required min="1" max="31" />
                     </div>
                     <label class="form-label mb-0 ms-2" for="day">日</label>
                 </div>
