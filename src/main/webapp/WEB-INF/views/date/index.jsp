@@ -34,8 +34,9 @@
                     <label class="form-label mb-0 ms-2" for="day">日</label>
                 </div>
 
-                <div class="col-sm-2 d-flex justify-content-center">
+                <div class="col-sm-2 d-flex align-items-center">
                     <input class="btn btn-sm btn-primary" type="submit" value="送信" />
+                    <input class="btn btn-sm btn-secondary ms-1" type="button" onclick="clearForm()" value="クリア" />
                 </div>
             </form>
 
@@ -70,5 +71,15 @@
         </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        /**
+         * 全てのテキストボックスを空にする
+         */
+        function clearForm() {
+            document.getElementById("year").value = "";
+            document.getElementById("month").value = "";
+            document.getElementById("day").value = "";
+        }
+    </script>
 </body>
 </html>
