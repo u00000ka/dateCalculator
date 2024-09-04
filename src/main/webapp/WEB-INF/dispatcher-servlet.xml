@@ -10,11 +10,8 @@
                            http://www.springframework.org/schema/mvc
                            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <!-- コンポーネントスキャン -->
-    <context:component-scan base-package="com.u00000ka.tools.Controller" />
-    <context:component-scan base-package="com.u00000ka.tools.Form" />
-    <context:component-scan base-package="com.u00000ka.tools.Service" />
-    <context:component-scan base-package="com.u00000ka.tools.ViewModel" />
+    <!-- コンポーネントスキャンの設定 -->
+    <context:component-scan base-package="com.u00000ka.tools" />
 
     <!-- バリデータの設定 -->
     <mvc:annotation-driven validator="validator" />
